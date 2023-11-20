@@ -1,45 +1,69 @@
-stack_size = 5
-list = [None] * stack_size
-top = -1
+#adt 8개 만들기 기본(5) + 3개 정도?
 
-def isEmpty():
-  return top == -1
+from pyclbr import Class
+from typing import Self
 
-def isFull():
-  return top == stack_size - 1
+class Stack:
+  def __init__(self, stack_size = 5):
+    self.stack_size = stack_size
+    self.list = [None] * stack_size
+    self.top = -1
 
-def push(e):
-  global top
-  if isFull():
-    print("스택이 가득 찾습니다.")
-    exit()
-  else:
-    top += 1
-    list[top] = e
-    print(list)
+  def isEmpty(self):
+    return self.top == -1
 
-def pop():
-  global top
-  if isEmpty():
-    print("스택이 비어있습니다.")
-    exit()
-  else:
-    top -= 1
-    return list[top+1]
+  def isFull(self):
+    return self.top == self.stack_size - 1
+
+  def push(self, e):
+    if not self.isFull():
+      self.top += 1
+      self.list[self.top] = e
+      print(self.list)
+    else:
+      print("스택이 가득 찾습니다.")
+      pass
+
+  def pop(self):
+    if not self.isEmpty():
+      self.top -= 1
+      return self.list[self.top + 1]
+    else:
+      print("스택이 비어있습니다.")
+      pass
+
+  def peek(self):
+    if not self.isEmpty():
+      return self.list[self.top]
+    else:
+      print("스택이 비어있습니다.")
+      pass
+
+  def allprint(self):
+    if not self.isEmpty():
+      print(self.pop())
+      self.allprint()
+    else:
+      print("스택이 비어있습니다.")
+      pass
     
 
-def peek():
-  if not isEmpty():
-    return list[top]
-  else: pass
 
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.push(5)
+stack.push(6)
 
+stack.allprint()
 
-push(1)
-push(2)
-push(3)
-push(4)
-push(5)
-
-print(pop())
-print(peek())
+#print(stack.peek())
+#print(stack.pop())
+#print(stack.pop())
+#print(stack.pop())
+#print(stack.pop())
+#print(stack.pop())
+#print(stack.pop())
+#print(stack.pop())

@@ -24,3 +24,15 @@ fish3 = FishCakeMaker(flavor = "초콜릿", size=15)
 fish1.show()
 fish2.show()
 fish3.show()
+
+
+class MarketFoods(FishCakeMaker):
+  def __init__(self, margin = 1000, **kwargs):
+    super().__init__(**kwargs)
+    self.market_price = self.price + margin
+  
+  def show(self):
+    print(self.flavor, self.market_price)
+
+fish1 = MarketFoods(size = 20, price = 5000)
+fish1.show()
