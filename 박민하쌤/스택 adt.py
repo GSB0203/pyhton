@@ -39,13 +39,26 @@ class Stack:
       print("스택이 비어있습니다.")
       pass
 
-  def allprint(self):
+  def allPrint(self):
     if not self.isEmpty():
       print(self.pop())
-      self.allprint()
+      self.allPrint()
     else:
       print("스택이 비어있습니다.")
       pass
+
+  def nowStackSize(self):
+    print("Stack size : {}".format(self.top + 1))
+    
+  def search(self, key):
+    if self.isEmpty():
+      print("스택이 비어있습니다.")
+      pass
+    for i in range(self.top + 1):
+      if(self.list[i] == key):
+        print("입력된 값이 존재합니다.")
+        return
+    print("입력된 값이 존재하지 않습니다.")
     
 
 
@@ -55,9 +68,12 @@ stack.push(2)
 stack.push(3)
 stack.push(4)
 stack.push(5)
+stack.search(3)
 stack.push(6)
-
-stack.allprint()
+stack.search(6)
+stack.nowStackSize()
+stack.allPrint()
+stack.nowStackSize()
 
 #print(stack.peek())
 #print(stack.pop())
