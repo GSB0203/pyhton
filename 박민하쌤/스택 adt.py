@@ -19,7 +19,6 @@ class Stack:
     if not self.isFull():
       self.top += 1
       self.list[self.top] = e
-      print(self.list)
     else:
       print("스택이 가득 찾습니다.")
       pass
@@ -49,6 +48,7 @@ class Stack:
 
   def nowStackSize(self):
     print("Stack size : {}".format(self.top + 1))
+    return self.top + 1
     
   def search(self, key):
     if self.isEmpty():
@@ -57,9 +57,9 @@ class Stack:
     for i in range(self.top + 1):
       if(self.list[i] == key):
         print("입력된 값이 존재합니다.")
-        return
+        return key
     print("입력된 값이 존재하지 않습니다.")
-    
+    pass
 
 
 stack = Stack()
