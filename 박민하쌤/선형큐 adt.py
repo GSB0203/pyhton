@@ -2,10 +2,10 @@
 #추가 기능 아직 안 만듬
 from typing import Self
 
-class CircularQueue:
+class Queue:
   def __init__(self, capacity = 5):  #큐 초기화 함수
     self.capacity = capacity  #큐 최대 사이즈
-    self.list = [None] * (capacity)  # 큐 요소 저장 리스트
+    self.list = [None] * (capacity)  # 큐 최대 사이즈 만큼 리스트 선언
     self.front = -1  #큐 앞부분 가르키는 인덱스 & 초기화
     self.rear = -1  #큐 뒷부분 가르키는 인덱스 & 초기화
 
@@ -43,7 +43,7 @@ class CircularQueue:
 
 
 
-queue = CircularQueue()
+queue = Queue()
 queue.peek()
 queue.enQueue(1)
 queue.enQueue(2)
