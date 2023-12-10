@@ -54,14 +54,8 @@ queue.addFront(2)
 queue.addRear(3)
 queue.addRear(4)
 queue.addRear(5)
-
-
 print(queue.list)
-
 queue.deleteRear()
-
 print(queue.list)
-
 queue.deleteFront()
-
 print(queue.list)

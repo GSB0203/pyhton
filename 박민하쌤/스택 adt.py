@@ -58,9 +58,9 @@ class Stack:
         if(self.list[i] == key):  #찾는 값이 존재하는가?
           print("입력된 값이 존재합니다.")  #출력
           return key  #찾는 값 리턴
-      print("스택이 비어있습니다.")  #출력
-    else:  #비었는가
       print("입력된 값이 존재하지 않습니다.")  #없으면 출력
+    else:  #비었는가
+      print("스택이 비어있습니다.")  #출력
 
 stack = Stack()
 stack.push(1)
@@ -72,6 +72,7 @@ stack.search(3)
 stack.pop()
 stack.push(6)
 stack.search(6)
+stack.search(7)
 stack.nowStackSize()
 stack.allPrint()
 stack.nowStackSize()

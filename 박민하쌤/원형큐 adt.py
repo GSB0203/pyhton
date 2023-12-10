@@ -1,6 +1,3 @@
-#추가 기능 아직 안 만듬
-from typing import Self
-
 class Queue:
   def __init__(self, capacity = 5):  #큐 초기화 함수
     self.capacity = capacity  #큐 최대 사이즈 설정
@@ -41,24 +38,54 @@ class Queue:
     else:  #비어있으면
       print("큐가 비어있습니다.")  #출력
 
+  def reverseDeQueue(self):  #마지막 제거하는 함수
+    if not self.isEmpty():  #비어있지 않았는가?
+      item = self.list[self.rear]  #item에 제거되는 맨 뒤 값 저장
+      self.list[self.rear] = None  #맨 뒤 값 제거
+      self.rear -= 1  #공간 이동
+      print(item)  #제거 값 출력
+      return item  #제거 값 리턴
+    else:  #비어있으면
+      print("큐가 비어있습니다.")  #출력
+
+  def search(self, key):  #값 찾기 함수
+    if not self.isEmpty():  #비어있지 않은가?
+      for i in range(self.capacity):  #현재 큐 최대 사이즈만큼 반복
+        if(self.list[i] == key):  #찾는 값이 존재하는가?
+          print("입력된 값이 존재합니다.")  #출력
+          return key  #찾는 값 리턴
+      print("입력된 값이 존재하지 않습니다.")  #없으면 출력
+    else:  #비었는가      
+      print("스택이 비어있습니다.")  #출력
+
+  def reomveKey(self, key):
+    if not self.isEmpty():  #비어있지 않은가?
+      for i in range(self.capacity):  #현재 큐 최대 사이즈만큼 반복
+        if(self.list[i] == key):  #찾는 값이 존재하는가?
+          item = self.list[i]  #찾은 값 item에 저장
+          self.list[i] = None  #찾은 값이 있던 공간 삭제
+          print(item)  #찾은 값 출력
+          return item  #찾은 값 리턴
+      print("제거할 값이 없습니다.")  #출력
+    else:  #비어있으면
+      print("큐가 비어있습니다.")  #출력
+
 
 
 queue = Queue()
-queue.peek()
 queue.enqueue(1)
-queue.peek()
 queue.enqueue(2)
-queue.peek()
 queue.enqueue(3)
-queue.peek()
 queue.enqueue(4)
-queue.peek()
-print(queue.list)
 queue.enqueue(5)
 queue.peek()
 queue.dequeue()
 print(queue.list)
 queue.enqueue(6)
+queue.search(6)
+queue.search(1)
 queue.peek()
-
+queue.reverseDeQueue()
+queue.reomveKey(4)
+queue.enqueue(1)
 print(queue.list)
