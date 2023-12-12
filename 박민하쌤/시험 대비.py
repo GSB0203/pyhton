@@ -1,5 +1,6 @@
 list = [10, 20, 30, 40]
 tuple = (10, 20)
+tuple2 = (10)
 dict = {1:10}
 set = {20}
 bool = True
@@ -7,6 +8,7 @@ bool = True
 print(type(bool))
 print(type(list))
 print(type(tuple))
+print(type(tuple2))
 print(type(dict))
 print(type(set))
 
