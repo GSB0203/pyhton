@@ -11,6 +11,7 @@ cnt = 0
 print(gcd(a, b, cnt))
   #cnt 2번작동
 
+
 def gcd(a, b, cnt):
   if a % b == 0:
     return b
@@ -22,6 +23,7 @@ a, b =map(int, input().split())
 cnt = 0
 print(gcd(a, b, cnt))
   #cnt 3번 작동
+
 
   #반복문
 a, b = map(int, input().split())
