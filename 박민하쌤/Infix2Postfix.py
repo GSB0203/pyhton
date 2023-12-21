@@ -73,7 +73,6 @@ def Infix2Postfix(expr):  #중위를 후위로 바꾸기 위한 함수
   
   return output  #찐마지막 output(리스트) 값 리턴
 
-
 infix1 = input()
 infix1 = list(infix1)
 postfix1 = (Infix2Postfix(infix1))
