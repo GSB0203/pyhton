@@ -14,8 +14,8 @@ print(type(boolean))  #<class 'bool'>
 print(type(string))  #<class 'str'>
 print(type(float))  #<class 'float'>
 print(type(list))  #<class 'list'>
-print(type(tuple))  #<class 'int'>
-print(type(tuple2))  #<class 'tuple'>
+print(type(tuple))  #<class 'tuple'>
+print(type(tuple2))  #<class 'int'>
 print(type(dict))  #<class 'dict'>
 print(type(set))  #<class 'set'>
 
@@ -26,9 +26,9 @@ arr = [x for x in range(10)]
 print(arr)
 
   #list 슬라이싱
-print(list[1:3])
-print(list[:3])
-print(list[1:])
+print(arr[1:3])
+print(arr[:3])
+print(arr[1:])
  
 #----------------------------------------------------
 
