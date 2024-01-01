@@ -7,7 +7,7 @@ while True:
       if n==a:
          print("정답입니다!")
          break
-      elif(a<n): print("UP")
+      elif a<n: print("UP")
       elif(a>n): print("DOWN")
     except:
        print("정수만 가능합니다.")
